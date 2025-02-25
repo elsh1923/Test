@@ -11,37 +11,44 @@
 <body>
     <header>
         <h1>Well Come To Ema Begena Shop</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About <abbr title="Ema Begena Shop">EBS</abbr></a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="hours.html">Store Hours</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+        <video src="img/galaxy.mp4" class="backvid" autoplay loop muted>
+            <source src="img/galaxy.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#about">About <abbr title="Ema Begena Shop">EBS</abbr></a></li>
+                <li class="nav-item"><a href="#menu">Menu</a></li>
+                <li class="nav-item"><a href="hours.html">Store Hours</a></li>
+                <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <figure>
-            <img src="img/amanuel-yit-trial8w.jpg" alt="performing Begena" 
+            <img class="img" src="img/amanuel-yit-trial8w.jpg" alt="performing Begena" 
             title="we love Begena" width="400" height="560">
-            <figcaption>
+            <figcaption class="caption">
                 <p>St.David's Begena</p>
             </figcaption>
         </figure>
     </header>
     <hr>
     <main>
-        <article id="about">
+        <article id="about" >
             <h2>About <abbr title="Ema Begena Shop">EBS</abbr></h2>
-            <p><abbr title="Ema Begena Shop">EBS</abbr> 
+            <p class="about-ebs"><abbr title="Ema Begena Shop">EBS</abbr> 
                 was founded in <time datetime="2022">2022</time>.
                  Our shop was build from a <strong>love of Begenas</strong>. <br>We hope 
                 our shop will bring you joy and happiness.
             </p>
+            
+           
             <aside>
                 <h3>History Of Begena</h3>
-                <details>
+                <details >
                     <summary>When did playing begena start?
                     </summary>
-                    <p>Historically during the imperial years of Ethiopia, Radio stations exclusively 
+                    <p class="info">Historically during the imperial years of Ethiopia, Radio stations exclusively 
                             played Begena in  their stations per his Majestys Emperor Haile Selassies <br>
                             This left a great impact on the people of Ethiopia. Kids that grew up during that time
                              associate Begena with Lent. In addition traditional <br>singers often abstain of singing
@@ -50,39 +57,15 @@
                             Gods unfailing Love and Grace, as well as the observances during lent.
                             (source: <cite><a href="https://ermiasbegena.com/blogs/news/the-great-lent-and-begena">
                             Ermias Begena</a></cite>)
-                                </p>
+                    </p>
                 </details>
             </aside>
         </article>
         <hr>
-        <article id="menu">
+    <div class="wrapper">
+        <article id="menu" class="styled-table">
             <h2>Our Menu</h2>
-            <style>
-                .styled-table {
-                    border-collapse: collapse;
-                    margin: 25px 0;
-                    font-size: 18px;
-                    text-align: left;
-                }
-                .styled-table th,
-                .styled-table td {
-                    padding: 12px 15px;
-                    border: 1px solid #2e44ec;
-                }
-                .styled-table thead tr {
-                    background-color: #c21789;
-                }
-                .styled-table tbody tr:nth-child(even) {
-                    background-color: #507645;
-                }
-                .styled-table tbody tr:nth-child(odd) {
-                    background-color: #c0722a;
-                }
-                .styled-table tbody tr:hover {
-                    background-color: #c54e4e;
-                }
-            </style>
-            <table class="styled-table">
+            <table >
                 <thead>
                     <caption>Our Begenas</caption>
                     <tr>
@@ -115,6 +98,7 @@
                 <a href="#">Back to the top</a>
             </p>
         </article>
+    </div>
     </main>
     <hr>
     <footer>

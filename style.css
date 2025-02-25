@@ -1,0 +1,232 @@
+*{
+   box-sizing: border-box;
+   font-family: poppins;
+}
+
+body{
+  
+    background-color:black ;
+    color: whitesmoke;
+}
+
+h1{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    border: 5px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    background: linear-gradient(to right, #8bb3cd, #72657f);
+    animation: transparenteffect  3s infinite;
+
+}
+
+.nav-bar
+{
+    background-color: #333;
+    text-align: center;
+    opacity: 0.6;
+    
+}
+.nav-list{
+    display: flex;
+    justify-content: center;
+     gap: 30px;
+}
+.nav-item{
+    list-style: none;
+    padding: 20px;
+    margin: 0,100px;
+    
+
+}
+.nav-item a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.nav-item a:hover{
+    color: rgba(51, 51, 51, 0.8);
+    background-color: rgba(209, 204, 195, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow:3px 3px 10px rgba(0, 0, 0, 0.5); 
+
+}
+.img2{
+    position: sticky;
+    margin-top: 50px;
+    width: 800px;
+    height: 800px;
+    border: 2px,solid,rgb(114, 112, 112);
+    border-radius: 30px;
+    box-shadow:5px 5px 5px rgba(14, 139, 217, 0.5); 
+    opacity: 0.7;
+    margin-left: 200px;
+    
+
+}
+.workingH{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+     text-align: center;
+    color: rgb(198, 189, 189);
+
+}
+dl{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+     text-align: center;
+    color: rgb(198, 189, 189);
+}
+
+.img{
+    position: sticky;
+    margin-top: 50px;
+    width: 600px;
+    height: 800px;
+    border: 2px,solid,rgb(114, 112, 112);
+    border-radius: 30px;
+    box-shadow:5px 5px 5px rgba(14, 139, 217, 0.5); 
+    opacity: 0.7;
+    margin-left: 260px;
+}
+.caption p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+     text-align: center;
+    color: rgb(198, 189, 189);
+}
+
+
+hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(to right, #3498db, #8e44ad); 
+    margin: 20px 0;
+}
+h2{
+    font-size: 30px;
+    
+    color:  rgb(198, 189, 189);
+   
+}
+h3{
+    font-size: 25px;
+    text-align: center;
+    color:  rgb(251, 242, 242);;
+    margin-top: 50px;
+
+}
+details{
+    margin: 20px, 0;
+    text-align: center;
+}
+
+summary{
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    color:  rgb(198, 189, 189);;
+    margin: 20px, 0;
+    text-align: center;
+
+}
+
+.info{
+    font-size: 20px;
+    color:  rgb(198, 189, 189);;
+    margin: 30px, 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.about-ebs{
+   
+    font-size: 25px;
+    text-align: center;
+    color:  rgb(198, 189, 189);
+    margin: 15px 0
+    
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+ }
+
+.styled-table {
+    width: 80%;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 5px;
+   table-layout: fixed;
+   
+}
+
+.styled-table h2 {
+    text-align: center;
+    color:  rgb(198, 189, 189);
+    
+    
+  
+}
+
+caption{
+    font-size: 20px;
+    color:  rgb(198, 189, 189);;
+    margin: 15px,0;
+    
+}
+
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #2e44ec;
+}
+.styled-table thead tr {
+    background-color: #c21789;
+}
+.styled-table tbody tr:nth-child(even) {
+    background-color: #507645;
+}
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #c0722a;
+}
+.styled-table tbody tr:hover {
+    background-color: #c54e4e;
+}
+
+            
+
+@keyframes transparentEffect {
+    0% {
+        color: rgb(191, 164, 97); 
+    }
+    50% {
+ 
+        color: rgba(110, 162, 195, 0.5); 
+    }
+    100% {
+        color: rgb(191, 115, 244); 
+    }
+}
+
+.backvid{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+footer{
+    text-align: center;
+    margin-top: 100px;
+}
