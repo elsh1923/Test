@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Elshaday Dagne">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is a official website for little begna shop">
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="img/OIP.jpg">
     <title>Ema Begena shop</title>
+
 </head>
 <body>
     <header>
@@ -24,13 +26,28 @@
                 <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <figure>
-            <img class="img" src="img/amanuel-yit-trial8w.jpg" alt="performing Begena" 
-            title="we love Begena" width="400" height="560">
-            <figcaption class="caption">
-                <p>St.David's Begena</p>
-            </figcaption>
-        </figure>
+        
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide fade">
+                    <img src="img/amanuel-yit-trial8w.jpg" alt="Begena 1">
+                </div>
+                <div class="slide fade">
+                    <img src="img/OIP (1).jpg" alt="Begena 2">
+                </div>
+                <div class="slide fade">
+                    <img src="img/1DED1239-40F9-44E2-8E4C-677596906FA6.webp" alt="Begena 3">
+                </div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+            
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
     </header>
     <hr>
     <main>
@@ -104,6 +121,41 @@
     <footer>
         <p>copyright &copy; Ema Begena Shop</p>
     </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Auto slide
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000); // Change image every 5 seconds
+    </script>
 </body>
 
 </html>
