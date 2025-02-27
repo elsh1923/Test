@@ -28,69 +28,57 @@ h1{
     color: transparent;
 }
 
-.nav-bar
-{
-    background: rgba(51, 51, 51, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px 0;
-    transition: all 0.3s ease;
-    position: sticky;
+.nav-bar {
+    position: fixed;
     top: 0;
-    z-index: 100;
-    text-align: center;
-    opacity: 0.6;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
 }
 
 .nav-bar.scrolled {
-    background: rgba(51, 51, 51, 0.95);
-    padding: 10px 0;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.nav-list{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.nav-list {
     display: flex;
     justify-content: center;
-     gap: 30px;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.nav-item{
+
+.nav-item {
     list-style: none;
     padding: 20px;
     margin: 0,100px;
     
 
 }
-.nav-item a{
-    text-decoration: none;
+
+.nav-item a {
     color: white;
-    font-size: 20px;
-    position: relative;
-    overflow: hidden;
-    padding: 8px 15px;
-    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 }
-.nav-item a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(to right, #8bb3cd, #72657f);
-    transition: width 0.3s ease;
+
+.nav-item a:hover {
+    background: rgba(139, 179, 205, 0.2);
+    color: #8bb3cd;
 }
-.nav-item a:hover::after {
-    width: 100%;
-}
-.nav-item a:hover{
-    text-shadow: 0 0 10px rgba(255,255,255,0.8);
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-}
+
 .img2{
     position: relative;
     margin-top: 50px;
@@ -1070,4 +1058,159 @@ form, .form-group, .form-group input, .form-group textarea, .form-group label {
 dl {
     margin: 20px auto;
     max-width: 400px;
+}
+
+/* Landing Page Styles */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('img/amanuel-yit-trial8w.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.landing-content {
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-out;
+    margin-top: 80px;
+}
+
+.landing-title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #8bb3cd, #72657f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.landing-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.landing-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.landing-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.landing-btn.primary {
+    background: linear-gradient(45deg, #8bb3cd, #72657f);
+    color: white;
+    border: none;
+}
+
+.landing-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #8bb3cd;
+}
+
+.landing-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce 2s infinite;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    width: 4px;
+    height: 8px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8px;
+    border-radius: 2px;
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    100% { transform: translate(-50%, 20px); opacity: 0; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landing-title {
+        font-size: 2.5rem;
+    }
+    
+    .landing-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .landing-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .landing-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-bar {
+        padding: 15px 0;
+    }
+    
+    .nav-item a {
+        font-size: 1rem;
+    }
+    
+    .landing-content {
+        margin-top: 200px;
+    }
 }
