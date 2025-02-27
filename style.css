@@ -1101,9 +1101,10 @@ dl {
 
 .landing-buttons {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
 .landing-btn {
@@ -1114,6 +1115,7 @@ dl {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    min-width: 200px;
 }
 
 .landing-btn.primary {
@@ -1189,6 +1191,7 @@ dl {
     
     .landing-buttons {
         flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
     
@@ -1213,4 +1216,93 @@ dl {
     .landing-content {
         margin-top: 200px;
     }
+}
+
+/* Landing Slider Styles */
+.landing-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.landing-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.landing-slider .slide.active {
+    opacity: 1;
+}
+
+.landing-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.landing-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.landing-slider .prev,
+.landing-slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    color: white;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.landing-slider .prev { left: 20px; }
+.landing-slider .next { right: 20px; }
+
+.landing-slider .prev:hover,
+.landing-slider .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.landing-slider .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.landing-slider .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.landing-slider .dot.active,
+.landing-slider .dot:hover {
+    background: white;
 }

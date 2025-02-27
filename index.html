@@ -13,12 +13,29 @@
     <div class="landing-page">
         <nav class="nav-bar">
             <ul class="nav-list">
-                <li class="nav-item"><a href="#about">About <abbr title="Ema Begena Shop">EBS</abbr></a></li>
                 <li class="nav-item"><a href="#menu">Menu</a></li>
                 <li class="nav-item"><a href="hours.html">Store Hours</a></li>
-                <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="landing-slider">
+            <div class="slide fade">
+                <img src="img/amanuel-yit-trial8w.jpg" alt="Begena 1">
+            </div>
+            <div class="slide fade">
+                <img src="img/OIP (1).jpg" alt="Begena 2">
+            </div>
+            <div class="slide fade">
+                <img src="img/1DED1239-40F9-44E2-8E4C-677596906FA6.webp" alt="Begena 3">
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+            
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
         <div class="landing-content">
             <h1 class="landing-title">Welcome to Ema Begena Shop</h1>
             <p class="landing-subtitle">Discover the Authentic Sound of Ethiopian Heritage</p>
@@ -107,6 +124,37 @@
     <footer>
         <p>copyright &copy; Ema Begena Shop</p>
     </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            const slides = document.querySelectorAll('.landing-slider .slide');
+            const dots = document.querySelectorAll('.landing-slider .dot');
+            
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            slides.forEach(slide => slide.style.opacity = '0');
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[slideIndex-1].style.opacity = '1';
+            dots[slideIndex-1].classList.add('active');
+        }
+
+        // Auto slide
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
 </body>
 
 </html>
