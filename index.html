@@ -13,10 +13,6 @@
 <body>
     <header>
         <h1>Well Come To Ema Begena Shop</h1>
-        <video src="img/galaxy.mp4" class="backvid" autoplay loop muted>
-            <source src="img/galaxy.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
         
         <nav class="nav-bar">
             <ul class="nav-list">
@@ -30,7 +26,7 @@
         <div class="slider-container">
             <div class="slider">
                 <div class="slide fade">
-                    <img src="img/amanuel-yit-trial8w.jpg" alt="Begena 1">
+                    <img src="img/amanuel-yit-trial8w.jpg" alt="Begena 1" class="vertical-img">
                 </div>
                 <div class="slide fade">
                     <img src="img/OIP (1).jpg" alt="Begena 2">
@@ -155,6 +151,22 @@
         setInterval(() => {
             changeSlide(1);
         }, 5000); // Change image every 5 seconds
+
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                var windowHeight = window.innerHeight;
+                var elementTop = element.getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
     </script>
 </body>
 

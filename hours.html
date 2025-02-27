@@ -12,10 +12,7 @@
 <body>
     <header>
         <h1>Ema Begena Shop Store Hours</h1>
-        <video src="img/galaxy.mp4" class="backvid" autoplay loop muted>
-            <source src="img/galaxy.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        
         <nav class="nav-bar">
             <ul class="nav-list">
                 <li class="nav-item"><a href="/">Home</a></li>
@@ -24,29 +21,91 @@
                 <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <figure>
-            <img class="img2" src="img/OIP (1).jpg" alt="Playing Begena" 
-            title="We Love Begena" width="474" height="316">
-            <figcaption class="caption">
-                <p>Playing Begena</p>
-            </figcaption>
-        </figure>
+        
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide fade">
+                    <img src="img/amanuel-yit-trial8w.jpg" alt="Begena 1">
+                </div>
+                <div class="slide fade">
+                    <img src="img/OIP (1).jpg" alt="Begena 2">
+                </div>
+                <div class="slide fade">
+                    <img src="img/1DED1239-40F9-44E2-8E4C-677596906FA6.webp" alt="Begena 3">
+                </div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
+            
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
     </header>
     <hr>
     <main>
-        <p class="workingH">We are open 6 days per week.</p>
-        <dl>
-            <dt>Monday-saturday</dt>
-            <dd>2:00-11:00</dd>
-        </dl>
-        <p class="workingH"><a href="#">Back to top</a></p>
-
+        <section class="card">
+            <h2 class="section-header">Store Hours</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Regular Hours</h3>
+                    <p class="workingH">We are open 6 days per week</p>
+                    <dl>
+                        <dt>Monday - Saturday</dt>
+                        <dd>2:00 PM - 11:00 PM</dd>
+                    </dl>
+                </div>
+                <div class="timeline-item">
+                    <h3>Holiday Hours</h3>
+                    <p class="workingH">Special hours may apply during holidays</p>
+                    <p>Please contact us for holiday schedules</p>
+                </div>
+            </div>
+        </section>
+        <div class="fab" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
     </main>
     <hr>
     <footer>
         <p>copyright &copy; Ema Begena Shop</p>
     </footer>
     <hr>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Auto slide
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000); // Change image every 5 seconds
+    </script>
 </body>
 
 </html>
