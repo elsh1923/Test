@@ -10,7 +10,7 @@
     <title>Ema Begena shop</title>
 </head>
 <body>
-    <div class="landing-page">
+    <div class="landing-page"> 
         <nav class="nav-bar">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#menu">Menu</a></li>
@@ -84,7 +84,7 @@
     <div class="wrapper">
         <article id="menu" class="styled-table">
             <h2>Our Menu</h2>
-            <table >
+            <table>
                 <thead>
                     <caption>Our Begenas</caption>
                     <tr>
@@ -94,23 +94,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="product-row" data-image="img/amanuel-yit-trial8w.jpg" 
+                        data-description="Traditional Ethiopian Begena with 6 strings. Hand-crafted from premium wood, perfect for beginners.">
                         <td>Num1</td>
                         <td>20</td>
                         <td>3000ETB</td>
                     </tr>
-                    <tr>
+                    <tr class="product-row" data-image="img/ebeg001.jpg"
+                        data-description="Professional 10-string Begena. Features authentic design and rich, deep tones.">
                         <td>Num2</td>
                         <td>15</td>
                         <td>5000ETB</td>
                     </tr>
-                    <tr>
+                    <tr class="product-row" data-image="img/0A368130-13AC-4A0A-9993-017FBB3795C8.webp"
+                        data-description="Premium Begena with decorative details.
+                        Includes carrying case and tuning accessories.">
                         <td>Num3</td>
                         <td>50</td>
                         <td>7500ETB</td>
                     </tr>
                 </tbody>
-               
             </table>
             <br>
             <p>
@@ -123,36 +126,19 @@
     <footer>
         <p>copyright &copy; Ema Begena Shop</p>
     </footer>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
+    <script src="script.js"></script>
 
-        function changeSlide(n) {
-            showSlides(slideIndex += n);
-        }
+    <!-- Modal for product image -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-container">
+            <img class="modal-content" id="modalImage">
+            <div class="modal-description" id="modalDescription"></div>
+        </div>
+    </div>
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            const slides = document.querySelectorAll('.landing-slider .slide');
-            const dots = document.querySelectorAll('.landing-slider .dot');
-            
-            if (n > slides.length) slideIndex = 1;
-            if (n < 1) slideIndex = slides.length;
-            
-            slides.forEach(slide => slide.style.opacity = '0');
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            slides[slideIndex-1].style.opacity = '1';
-            dots[slideIndex-1].classList.add('active');
-        }
-
-        // Auto slide
-        setInterval(() => {
-            changeSlide(1);
-        }, 5000);
+    <!-- Add message containers -->
+    
     </script>
 </body>
 
