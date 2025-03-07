@@ -1834,9 +1834,10 @@ main {
 
 /* Store Hours Section Styles */
 .store-hours-section {
-    padding: 120px 20px 60px;
-    max-width: 800px;
+    padding: 120px 40px 60px;
+    max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .timeline {
@@ -1848,6 +1849,7 @@ main {
     width: 100%;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 800px;
 }
 
 .section-header {
@@ -1863,12 +1865,13 @@ main {
 
 .timeline-item {
     background: rgba(255, 255, 255, 0.05);
-    margin: 25px 0;
-    padding: 30px;
+    margin: 25px auto;
+    padding: 40px;
     border-radius: 12px;
     border-left: 3px solid #8bb3cd;
     transition: all 0.3s ease;
-    max-width: 100%;
+    width: 100%;
+    min-width: 700px;
 }
 
 .timeline-item:hover {
@@ -1937,23 +1940,15 @@ main {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .store-hours-container {
-        grid-template-columns: 1fr;
+@media (max-width: 900px) {
+    .store-hours-section {
+        padding: 100px 20px 40px;
     }
 
-    .hours-info {
-        order: 2;
-    }
-
-    .timeline {
-        order: 1;
-    }
-
-    .holiday-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+    .timeline,
+    .timeline-item {
+        min-width: auto;
+        width: 100%;
     }
 }
 
@@ -1963,6 +1958,8 @@ main {
     padding: 0;
     margin: 0;
     max-width: 1200px;
+    width: 100%;
+    max-width: none;
 }
 
 .contact-section {
