@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="author" content="Elshaday Dagne">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Create account for Ema Begena shop">
-    <link rel="stylesheet" href="style.css"> 
+    <meta name="description" content="Sign up for EBS Store updates and special offers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/OIP.jpg">
-    <title>Create Account - EBS</title>
+    <title>Sign Up - EBS</title>
 </head>
 <body>
     <header>
@@ -15,58 +19,107 @@
             <ul class="nav-list">
                 <li class="nav-item"><a href="/">Home</a></li>
                 <li class="nav-item"><a href="/#menu">Menu</a></li>
-                <li class="nav-item"><a href="/#about">Learn More</a></li>
-                <li class="nav-item"><a href="hours.html">Store Hours</a></li>
                 <li class="nav-item"><a href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a href="hours.html">Store Hours</a></li>
+                <li class="nav-item"><a href="/#about">Learn More</a></li>
             </ul>
         </nav>
     </header>
+    <hr>
     <main>
-        <section class="signup-container">
-            <h2>Create Your Account</h2>
-            <form class="signup-form" action="#" method="POST">
-                <div class="form-group">
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
-                </div>
+        <section class="signup-section">
+            <div class="signup-container">
+                <h2>Create Account</h2>
+                <form class="signup-form" action="#" method="post" id="signupForm">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required 
+                               minlength="2" placeholder="Enter your full name">
+                        <div class="validation-message"></div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="Enter your email">
+                        <div class="validation-message"></div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" 
+                               placeholder="Enter your phone number">
+                        <div class="validation-message"></div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Create a password">
-                </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required 
+                               minlength="8" placeholder="Create a password">
+                        <div class="validation-message"></div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
-                </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" 
+                               required minlength="8" placeholder="Confirm your password">
+                        <div class="validation-message"></div>
+                    </div>
 
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">I agree to the Terms and Conditions</label>
-                </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the Terms & Conditions and Privacy Policy</label>
+                    </div>
 
-                <div class="form-buttons">
-                    <button type="submit">Create Account</button>
-                    <button type="reset" class="secondary">Reset</button>
-                </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                    </div>
 
-                <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
-            </form>
+                    <div class="form-buttons">
+                        <button type="submit" class="signup-btn">Create Account</button>
+                    </div>
+
+                    <div class="login-link">
+                        <p>Already have an account? <a href="#">Log in</a></p>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>copyright &copy; Ema Begena Shop</p>
+
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Fezak Commercial Building</p>
+                <p>Phone: +251 927 617 474</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/EmaBegenaShop" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emabegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/251927617474" class="social-link" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Join our Telegram channel">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ema Begena Shop. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="dist/main.js" type="module"></script>
 </body>
 </html> 

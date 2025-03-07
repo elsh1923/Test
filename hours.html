@@ -5,14 +5,16 @@
     <meta name="author" content="Elshaday Dagne">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is a Store little begna shop">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="img/OIP.jpg">
     <title>EBS Store Hours</title>
 </head>
 <body>
     <header>
-     
-        
         <nav class="nav-bar">
             <ul class="nav-list">
                 <li class="nav-item"><a href="/">Home</a></li>
@@ -25,31 +27,131 @@
     </header>
     <hr>
     <main>
-        <section class="card">
+        <section class="store-hours-section">
             <h2 class="section-header">Store Hours</h2>
+            
             <div class="timeline">
+                <!-- Current Status -->
+                <div class="timeline-item">
+                    <div class="store-status-container">
+                        <h3>Current Status</h3>
+                        <div class="status-wrapper">
+                            <div id="store-status" class="status-indicator"></div>
+                            <div id="next-hours" class="next-hours"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Hours -->
                 <div class="timeline-item" data-day="1">
                     <h3>Regular Hours</h3>
                     <p class="workingH">We are open 6 days per week</p>
                     <dl>
-                        <dt>Monday - Saturday</dt>
+                        <dt>Monday - Friday</dt>
                         <dd>2:00 PM - 11:00 PM</dd>
+                        <dt>Saturday</dt>
+                        <dd>12:00 PM - 11:00 PM</dd>
                     </dl>
                 </div>
+
+                <!-- Holiday Hours -->
                 <div class="timeline-item" data-day="0">
                     <h3>Holiday Hours</h3>
                     <p class="workingH">Special hours may apply during holidays</p>
-                    <p>Please contact us for holiday schedules</p>
+                    <div class="special-hours">
+                        <h4>Upcoming Holiday Hours</h4>
+                        <ul id="holiday-hours" class="holiday-list">
+                            <li>
+                                <span class="holiday-date">April 1, 2024</span>
+                                <span class="holiday-name">Easter Monday</span>
+                                <span class="holiday-hours">3:00 PM - 10:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="holiday-date">May 1, 2024</span>
+                                <span class="holiday-name">Labor Day</span>
+                                <span class="holiday-hours">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="timeline-item">
+                    <h3>Additional Information</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>Call Ahead</h4>
+                            <p>For special arrangements or large groups, please call us at:</p>
+                            <a href="tel:+251927617474" class="contact-btn">+251 927 617 474</a>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Reservations</h4>
+                            <p>Book your table in advance for special occasions</p>
+                            <a href="contact.html" class="contact-btn">Make a Reservation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Need More Information -->
+                <div class="timeline-item">
+                    <div class="quick-contact">
+                        <h3>Need More Information?</h3>
+                        <p>Contact us directly or follow us on social media for updates</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/EmaBegenaShop" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/emabegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Twitter">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://wa.me/251927617474" class="social-link" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <div class="fab" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
     </main>
     <hr>
-    <footer>
-        <p>copyright &copy; Ema Begena Shop</p>
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Fezak Commercial Building</p>
+                <p>Phone: +251 927 617 474</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/EmaBegenaShop" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emabegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/251927617474" class="social-link" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Join our Telegram channel">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ema Begena Shop. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="src/main.ts" type="module"></script>
 </body>
-
 </html>

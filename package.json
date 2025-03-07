@@ -1,0 +1,27 @@
+{
+  "name": "ebs-store",
+  "version": "1.0.0",
+  "description": "EBS Store Website",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.17.23",
+    "typescript": "^5.8.2",
+    "lite-server": "^2.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsh1923/Test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elsh1923/Test/issues"
+  },
+  "homepage": "https://github.com/elsh1923/Test#readme"
+}

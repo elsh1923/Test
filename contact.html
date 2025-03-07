@@ -5,14 +5,16 @@
     <meta name="author" content="Elshaday Dagne">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Information little begna shop">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="img/OIP.jpg">
     <title>Contact Us - EBS</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <header>
-       
-        
         <nav class="nav-bar">
             <ul class="nav-list">
                 <li class="nav-item"><a href="/">Home</a></li>
@@ -25,59 +27,138 @@
     </header>
     <hr>
     <main>
-        <section>
-        <h2>Our Contact Form</h2>
-        <form action="http:/httpbin.org/get" method="get">
-            <fieldset>
-                <legend>Send Us A Message</legend>
-                <div class="form-group">
-                    <label for="name">Name: </label>
-                    <input type="text" name="name" id="name" required autofocus autocomplete="on" 
-                    placeholder="your name" minlength="2">
-                    <span class="validation-message" id="nameValidation"></span>
-                </div>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
                 
-                <div class="form-group">
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" id="email" required autocomplete="on" 
-                    placeholder="your email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+">
-                    <span class="validation-message" id="emailValidation"></span>
+                   
                 </div>
-                <div class="form-group">
-                    <label for="message">Your Message: </label>
-                    <textarea name="message" id="message" cols="30" rows="10"
-                    placeholder="type your message here" maxlength="500"></textarea>
-                    <div class="char-counter" id="charCount">500 characters remaining</div>
-                </div>
-                <div class="form-buttons">
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
-                    
-                </div>
-            </fieldset>
-        </form>
-    </section>
-    <section>
-        <h2>Our Address</h2>
-        <address>
-            Fezak Commercial Building
-            <a href="https://maps.app.goo.gl/SvyFyfqi7smSTPzr8">Shoping Center</a>
-            <br><br>
-            Phone: <a href="tell:+251927617474">+251927617474</a>
-        </address>
-        <button id="copyBtn" class="contact-btn">Copy Contact Info</button>
-    </section>
 
+                <form id="contactForm" class="contact-form" action="http://httpbin.org/post" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required minlength="2" 
+                               placeholder="Your name">
+                        <div class="validation-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="Your email">
+                        <div class="validation-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone (optional):</label>
+                        <input type="tel" id="phone" name="phone" 
+                               placeholder="Your phone number">
+                        <div class="validation-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactTime">Best time to contact:</label>
+                        <select id="contactTime" name="contactTime" required>
+                            <option value="" disabled selected>Select preferred time...</option>
+                            <option value="morning">Morning (9AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (2PM - 5PM)</option>
+                            <option value="evening">Evening (5PM - 8PM)</option>
+                            <option value="any">Any time</option>
+                        </select>
+                        <div class="validation-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Choose a subject...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="product">Product Information</option>
+                            <option value="support">Customer Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="validation-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required 
+                                placeholder="Your message here..." maxlength="500"></textarea>
+                        <div class="char-counter">500 characters remaining</div>
+                        <div class="validation-feedback"></div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                        <button type="reset" class="reset-btn">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h3>Our Location</h3>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5465841615074!2d38.7453893!3d9.0334268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f0f9a06d85%3A0x4a6a62528aa37d45!2sFezak%20Commercial%20Building!5e0!3m2!1sen!2set!4v1647872694028!5m2!1sen!2set"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
     </main>
-    <hr>
-    <footer>
-        <p>copyright &copy; Ema Begena Shop</p>
-    </footer>
-    
-    <div class="form-message success" hidden>Message sent successfully!</div>
-    <div class="form-message error" hidden>Error sending message.</div>
-    <script src="script.js"></script>
-    <hr>
-</body>
 
+    <div class="notification" id="notification" style="display: none;">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <p class="notification-message"></p>
+        </div>
+        <button class="notification-close">&times;</button>
+    </div>
+
+    <footer class="modern-footer">
+        <div class="footer-content">
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Fezak Commercial Building</p>
+                <p>Phone: +251 927 617 474</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/EmaBegenaShop" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emabegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Follow us on Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/251927617474" class="social-link" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/EmaBegena" class="social-link" target="_blank" rel="noopener noreferrer" title="Join our Telegram channel">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ema Begena Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="dist/main.js" type="module"></script>
+</body>
 </html>
